@@ -1,0 +1,47 @@
+# Rails Assistant
+
+![Rails Assistant Icon](http://railsassistant.com/assets/IconMedium.png)
+
+The rails_assistant connects via a Websocket to your [http://railsassistant.com](Rails Assistant) project, currently this allows Rails Assistant to reload the site on project restart.
+
+In future we'll use it to facilitate further communication.
+
+Note: This gem will not affect your production environment, or your development environment outside of Rails Assistant.
+
+Currently tested on Rails 3.1+
+
+## Installation
+In your `Gemfile`, add the following dependencies:
+
+    gem 'rails_assistant'
+
+Run:
+
+    bundle install
+
+Now run your Rails App with Rails Assistant
+
+## Not Rails
+Currently this gem is a convenience wrapper for some javascript and a stylesheet. If you're project isn't Rails based, then incorporating the following files will work just as well
+
+Required:
+
+[rails_assistant/rails_assistant.js](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/javascripts/rails_assistant/rails_assistant.js)
+	
+Add this to your html
+
+	<script src="rails_assistant.js"></script> 
+
+Optional: (aesthetics only)
+
+[rails_assistant/rails_assistant.css](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/stylesheets/rails_assistant/rails_assistant.css)
+
+Add this to your html
+
+	<link rel="stylesheet" href="rails_assistant.css">
+
+[rails_assistant/icon.png](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/images/rails_assistant/icon.png)
+
+Add icon to assets folder 
+
+	assets/icon.png

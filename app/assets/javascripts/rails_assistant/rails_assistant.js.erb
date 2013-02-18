@@ -1,0 +1,65 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
+// GO AFTER THE REQUIRES BELOW.
+//
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
+<% if ENV['com.nocturnalcode.RailsAssistant'].present? %>
+
+var ws;
+var t;
+
+function SendMessage() {
+   ws.send(JSON.stringify("ping"));
+	t=setTimeout("SendMessage()",1000);
+}
+
+function Connect() {
+   ws = new WebSocket("ws://localhost:2999/service");
+   ws.onopen = function() {
+      ws.send(JSON.stringify( {"action":"identifier","identifier":$(location).attr('port')} ))
+      t=setTimeout("SendMessage()",1000);
+      
+      $("#rails-assistant").addClass("connected");
+      $('#rails-assistant img').attr('title', 'Rails Assistant: Websocket connected');
+   };
+   ws.onmessage = function(evt) {
+      var message = evt.data;
+      var json = JSON.parse(message);
+      
+      // $('#rails-assistant').css({opacity: 0.9});
+      // $('#rails-assistant').animate({opacity: 1}, 100 );
+
+      if (json["action"] == "refresh") {
+      	window.location.reload(true);
+      }
+   };
+   ws.onclose = function() {
+      $("#rails-assistant").removeClass("connected");
+      $('#rails-assistant img').attr('title', 'Rails Assistant: Websocket not connected');
+      Connect();
+   };
+   ws.onerror = function(evt) {
+      // console.log("onerror: " + evt);
+   };
+}
+
+$(window).load(function() {
+
+   if ("WebSocket" in window) {
+      $('body').append('<div id="rails-assistant"><img src="assets/rails_assistant/icon.png"/></div>')
+      Connect();
+   }
+});
+
+<% end %>

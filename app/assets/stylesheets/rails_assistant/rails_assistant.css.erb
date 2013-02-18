@@ -15,18 +15,30 @@
 <% if ENV['com.nocturnalcode.RailsAssistant'].present? %>
 
 #rails-assistant {
-	border-radius: 10px;
-	background-color: #EEE;
-	border: 1px solid black;
-	width: 42px;
-	height: 42px;
-	position:fixed;
-	bottom:5px;
-	right:5px;
+  height: 25px;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	margin: 3px;
+	
+	opacity:0.6;
+  filter: alpha(opacity=60);
 }
 
-#rails-assistant, img {
-	margin: 5px;
+#rails-assistant.connected {
+  opacity:1.0;
+  filter: alpha(opacity=100);
+}
+
+#rails-assistant > img {
+  width: 25px;
+  height: 25px;
+  float: right;
+}
+
+#rails-assistant > p {
+  display: block;
+  width: 200px;
 }
 
 <% end %>
