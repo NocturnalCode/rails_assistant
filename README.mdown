@@ -2,7 +2,7 @@
 
 ![Rails Assistant Icon](http://railsassistant.com/assets/IconMedium.png)
 
-The rails_assistant connects via a Websocket to your [http://railsassistant.com](Rails Assistant) project, currently this allows Rails Assistant to reload the site on project restart.
+The rails_assistant gem connects via a Websocket to your [http://railsassistant.com](Rails Assistant) project, currently this allows Rails Assistant to reload the site on project restart.
 
 In future we'll use it to facilitate further communication.
 
