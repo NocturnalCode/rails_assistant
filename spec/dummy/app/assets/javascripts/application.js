@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require rails_assistant/rails_assistant
 //= require_tree .
+
+
+
+
+// require rails_assistant/rails_assistant

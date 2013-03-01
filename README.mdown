@@ -4,20 +4,35 @@
 
 The rails_assistant connects via a Websocket to your [http://railsassistant.com](Rails Assistant) project, currently this allows Rails Assistant to reload the site on project restart.
 
-In future we'll use it to facilitate further communication.
+In future we'll use it to facilitate more advanced communication between the browser and App.
 
 Note: This gem will not affect your production environment, or your development environment outside of Rails Assistant.
 
 Currently tested on Rails 3.1+
 
 ## Installation
-In your `Gemfile`, add the following dependencies:
+In your `Gemfile`, add gem 'rails_assistant':
 
     gem 'rails_assistant'
+
+You can safely add this gem outside of your development group if you wish, the gem is only functional when run in the Rails Assistant environment
 
 Run:
 
     bundle install
+
+Next you need to either run the generator:
+
+    rails generate rails_assistant:install
+
+or, manually add this code to your "application" layout
+
+	<% if ENV['com.nocturnalcode.RailsAssistant'].present? %>
+    	<%= javascript_include_tag 'rails_assistant/rails_assistant' %>
+    	<%= stylesheet_link_tag 'rails_assistant/rails_assistant' %>
+	<% end %>
+
+Note: You can can technically add "= require rails_assistant/rails_assistant" into your application css or js sprockets manifest but this will cause issues in production if you only have the gem in development.
 
 Now run your Rails App with Rails Assistant
 
