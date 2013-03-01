@@ -41,21 +41,25 @@ Currently this gem is a convenience wrapper for some javascript and a stylesheet
 
 Required:
 
-[rails_assistant/rails_assistant.js](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/javascripts/rails_assistant/rails_assistant.js)
+[rails_assistant/rails_assistant.js](http://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/javascripts/rails_assistant/rails_assistant.js.erb)
+
+[rails_assistant/json2.js](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/javascripts/rails_assistant/json2.js)
 	
+
 Add this to your html
 
+	<script src="json2.js"></script>
 	<script src="rails_assistant.js"></script> 
 
 Optional: (aesthetics only)
 
-[rails_assistant/rails_assistant.css](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/stylesheets/rails_assistant/rails_assistant.css)
+[rails_assistant/rails_assistant.css](http://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/stylesheets/rails_assistant/rails_assistant.css.erb)
 
 Add this to your html
 
 	<link rel="stylesheet" href="rails_assistant.css">
 
-[rails_assistant/icon.png](https://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/images/rails_assistant/icon.png)
+[rails_assistant/icon.png](http://github.com/NocturnalCode/rails_assistant/blob/master/app/assets/images/rails_assistant/icon.png)
 
 Add icon to assets folder 
 
