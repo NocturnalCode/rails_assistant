@@ -25,7 +25,7 @@ function SendMessage() {
 }
 
 function Connect() {
-   ws = new WebSocket("ws://localhost:2999/service");
+   ws = new WebSocket("ws://" + window.location.host.split(':')[0] + ":2999/service");
    ws.onopen = function() {
       ws.send(JSON.stringify( {"action":"identifier","identifier":$(location).attr('port')} ))
       t=setTimeout("SendMessage()",1000);
