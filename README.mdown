@@ -37,7 +37,7 @@ Note: You can can technically add "= require rails_assistant/rails_assistant" in
 Now run your Rails App with Rails Assistant
 
 ## Not Rails
-Currently this gem is a convenience wrapper for some javascript and a stylesheet. If you're project isn't Rails based, then incorporating the following files will work just as well
+Currently this gem is a convenience wrapper for some javascript and a stylesheet. If your project isn't Rails based, then incorporating the following files will work just as well
 
 Required:
 
