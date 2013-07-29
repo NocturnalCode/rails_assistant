@@ -10,8 +10,6 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
 //= require_tree .
 
 <% if ENV['com.nocturnalcode.RailsAssistant'].present? %>
@@ -22,6 +20,14 @@ var t;
 function SendMessage() {
    ws.send(JSON.stringify("ping"));
 	t=setTimeout("SendMessage()",1000);
+  
+  if($("#rails-assistant").length === 0) {
+    Insert() 
+  }
+}
+
+function Insert() {
+  $('body').append('<div id="rails-assistant"><img src="http://'+ window.location.host +'/assets/rails_assistant/icon.png"/></div>')
 }
 
 function Connect() {
@@ -39,6 +45,8 @@ function Connect() {
       
       // $('#rails-assistant').css({opacity: 0.9});
       // $('#rails-assistant').animate({opacity: 1}, 100 );
+      $("#rails-assistant").addClass("connected");
+      $('#rails-assistant img').attr('title', 'Rails Assistant: Websocket connected');
 
       if (json["action"] == "refresh") {
       	window.location.reload(true);
@@ -57,7 +65,7 @@ function Connect() {
 $(window).load(function() {
 
    if ("WebSocket" in window) {
-      $('body').append('<div id="rails-assistant"><img src="assets/rails_assistant/icon.png"/></div>')
+      Insert();
       Connect();
    }
 });

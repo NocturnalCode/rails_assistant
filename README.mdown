@@ -8,7 +8,7 @@ In future we'll use it to facilitate more advanced communication between the bro
 
 Note: This gem will not affect your production environment, or your development environment outside of Rails Assistant.
 
-Currently tested on Rails 3.1+
+Currently tested on Rails 3.1, 3.2 and 4.0 (with turbolinks)
 
 ## Installation
 In your `Gemfile`, add gem 'rails_assistant':
