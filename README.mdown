@@ -1,6 +1,7 @@
 # Rails Assistant
 
 ![Rails Assistant Icon](http://railsassistant.com/assets/IconMedium.png)
+[![Gem Version](https://badge.fury.io/rb/rails_assistant.png)](http://badge.fury.io/rb/rails_assistant)
 
 The rails_assistant gem connects via a Websocket to your [http://railsassistant.com](Rails Assistant) project, currently this allows Rails Assistant to reload the site on project restart.
 

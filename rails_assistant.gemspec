@@ -10,10 +10,9 @@ Gem::Specification.new do |s|
   s.homepage    = "http://www.railsassistant.com"
   s.summary     = "Websocket connection to Rails Assistant Mac App"
   s.description = "rails_assistant gem connects via a websocket to your Rails Assistant project, currently this allows Rails Assistant to reload the site, in future we'll use it to facilitate communication. This gem will not affect your production environment, or your development environment outside of Rails Assistant."
-
   s.files = Dir["{app,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.mdown"]
   s.test_files = Dir["spec/**/*"]
-
+  s.license = 'MIT'
   s.add_dependency "rails", "> 3.1"
 
   s.add_development_dependency "sqlite3"
